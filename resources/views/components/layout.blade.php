@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="text-white bg-black">
+<body class="pb-10 text-white bg-black">
 
     <div class="px-10">
         <nav class="flex items-center justify-between py-4 border-b border-white/10">
@@ -23,9 +23,19 @@
                 <a href="">Salaries</a>
                 <a href=""> companies</a>
             </div>
-            <div>
-                <a href=""> Post Job</a>
-            </div>
+            @auth
+                <div>
+                    <a href="/jobs/create"> Post Job</a>
+                </div>
+            @endauth
+
+            @guest
+                <div class="space-x-6 font-bold">
+                    <a href="/login">Login</a>
+                    <a href="/register">Register</a>
+                </div>
+            @endguest
+
         </nav>
 
         <main class="mt-10 max-w-[986px] mx-auto">

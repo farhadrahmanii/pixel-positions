@@ -14,5 +14,4 @@
             break;
     }
 @endphp
-
 <a href="/tags/{{ strtolower($tag->name) }}" class="{{ $classes }}">{{ $tag->name }}</a>
